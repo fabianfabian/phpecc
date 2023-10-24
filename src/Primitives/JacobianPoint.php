@@ -275,7 +275,7 @@ class JacobianPoint
     /**
      * Bitwise Right Shift.
      */
-    public function gmp_shiftr(\GMP | int $x, \GMP | int $n): \GMP
+    public function gmp_shiftr($x, $n)
     {
         return gmp_div($x, gmp_pow(2, $n));
     }
@@ -644,7 +644,7 @@ class JacobianPoint
      *     Perform two multiplications of aP and bQ, then add them together,
      * (Unsafe based on exposed Private Key).
      */
-    public function multiplyAndAddUnsafe(Point $Q, \GMP $a, \GMP $b): bool | JacobianPoint
+    public function multiplyAndAddUnsafe(Point $Q, \GMP $a, \GMP $b)
     {
         $P = $this->getBase();
 
